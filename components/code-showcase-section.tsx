@@ -4,6 +4,12 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Copy, Check, ExternalLink } from "lucide-react";
+import { useTheme } from "next-themes";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import {
+  oneDark,
+  oneLight,
+} from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const codeSnippets = [
   {
@@ -121,6 +127,7 @@ pub fn chat_with_llm(ctx: Context<ChatWithLlm>, text: String) -> Result<()> {
 export function CodeShowcaseSection() {
   const [activeTab, setActiveTab] = useState("create-chat");
   const [copied, setCopied] = useState(false);
+  const { theme } = useTheme();
 
   const activeSnippet =
     codeSnippets.find((s) => s.id === activeTab) || codeSnippets[0];
@@ -235,11 +242,31 @@ export function CodeShowcaseSection() {
                   exit={{ opacity: 0, y: -10 }}
                   transition={{ duration: 0.2 }}
                 >
-                  <pre className="p-6 overflow-x-auto text-sm leading-relaxed max-h-[500px] overflow-y-auto">
-                    <code className="font-mono text-foreground/90 whitespace-pre">
-                      {activeSnippet.code}
-                    </code>
-                  </pre>
+                  <SyntaxHighlighter
+                    language="rust"
+                    style={theme === "dark" ? oneDark : oneLight}
+                    customStyle={{
+                      margin: 0,
+                      padding: "1.5rem",
+                      background: "transparent",
+                      fontSize: "0.875rem",
+                      lineHeight: "1.6",
+                      maxHeight: "500px",
+                      overflowY: "auto",
+                      borderRadius: "0.375rem",
+                    }}
+                    codeTagProps={{
+                      style: {
+                        fontFamily:
+                          'var(--font-geist-mono), ui-monospace, SFMono-Regular, "SF Mono", Consolas, "Liberation Mono", Menlo, monospace',
+                        fontSize: "0.875rem",
+                        lineHeight: "1.5",
+                        fontWeight: "400",
+                      },
+                    }}
+                  >
+                    {activeSnippet.code}
+                  </SyntaxHighlighter>
                 </motion.div>
               </AnimatePresence>
             </div>
