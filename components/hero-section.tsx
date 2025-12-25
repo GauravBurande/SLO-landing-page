@@ -79,7 +79,7 @@ export function HeroSection() {
               asChild
               variant="outline"
               size="lg"
-              className="rounded-full hover:text-accent px-8 h-12 text-base group bg-transparent"
+              className="rounded-full dark:hover:text-accent px-8 h-12 text-base group bg-transparent"
             >
               <a href="#use-cases">
                 See Live Example

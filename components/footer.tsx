@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Github, Twitter } from "lucide-react";
+import { Github, Send, Twitter } from "lucide-react";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 
@@ -47,6 +47,15 @@ export function Footer() {
               >
                 <Twitter className="w-5 h-5" />
                 <span className="sr-only">Twitter</span>
+              </a>
+              <a
+                href="https://t.me/+yz3evE6FTc41NWQ9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-foreground transition-colors"
+              >
+                <Send className="w-5 h-5" />
+                <span className="sr-only">Telegram</span>
               </a>
             </div>
           </div>
