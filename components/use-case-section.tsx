@@ -65,9 +65,9 @@ export function UseCaseSection() {
                 </div>
                 <div className="flex items-center justify-between p-3 bg-muted/50 rounded-lg">
                   <span className="text-sm text-muted-foreground">
-                    Risk Score Output
+                    Credibility Score Output
                   </span>
-                  <span className="text-sm font-mono">0.00 - 1.00</span>
+                  <span className="text-sm font-mono">1.00 - 100</span>
                 </div>
               </div>
             </div>
