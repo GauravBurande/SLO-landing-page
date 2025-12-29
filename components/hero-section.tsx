@@ -27,7 +27,7 @@ export function HeroSection() {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-muted/50 border border-border mb-8">
               <Sparkles className="w-4 h-4 text-accent" />
               <span className="text-sm text-muted-foreground">
-                Now live with DeFi Score example
+                CA: Bgh6yMzFXsoPMCaf9D6rDChzYCqjEG9Fh5KcYKDcyai
               </span>
             </div>
           </motion.div>
